@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rose Nails — маникюрный салон</title>
+<style>
+:root{--bg:#fff8f6;--card:#ffffff;--text:#2b2024;--muted:#7a6a70;--accent:#d9577a;--accent-t:#ffffff;--line:#f1dfe3;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1417;--card:#271c20;--text:#f7eaee;--muted:#b9a3aa;--accent:#e8708f;--accent-t:#1c1417;--line:#3a2a30;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1417;--card:#271c20;--text:#f7eaee;--muted:#b9a3aa;--accent:#e8708f;--accent-t:#1c1417;--line:#3a2a30;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+section{padding:48px 0}
+h1{font-size:clamp(2rem,7vw,3.2rem);line-height:1.1;margin:0 0 16px}
+h2{font-size:1.6rem;margin:0 0 24px}
+p{margin:0 0 16px;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-t);border:0;padding:14px 28px;border-radius:999px;font-size:1rem;font-weight:600;text-decoration:none;cursor:pointer}
+.hero{padding:72px 0 56px;text-align:center}
+.hero p{font-size:1.1rem;max-width:520px;margin:0 auto 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card p{margin:0}
+.price{color:var(--accent);font-weight:700;margin-top:10px}
+.masters{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.m{cursor:pointer;text-align:center;transition:border-color .2s}
+.m.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.av{width:72px;height:72px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:2rem;background:var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--text);padding:8px 16px;border-radius:999px;cursor:pointer;font-size:.95rem}
+.tab.on{background:var(--accent);color:var(--accent-t);border-color:var(--accent)}
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.w{aspect-ratio:1;border-radius:16px;display:flex;align-items:flex-end;padding:10px;font-size:.85rem;font-weight:600;color:#fff}
+.sum{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:.95rem}
+.sum b{color:var(--accent)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.nav strong{font-size:1.1rem}
+.nav div{display:flex;gap:8px}
+.nav a{padding:8px 16px;border-radius:999px;color:var(--text);text-decoration:none;font-size:.95rem}
+.nav a.on{background:var(--accent);color:var(--accent-t)}
+[hidden]{display:none!important}
+form{display:grid;gap:12px;max-width:420px}
+input,select{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1rem}
+#ok{display:none;color:var(--accent);font-weight:600}
+footer{text-align:center;padding:32px 0;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <strong>💅 Rose Nails</strong>
+    <div><a href="#home" class="on">Главная</a><a href="#booking">Запись</a></div>
+  </nav>
+<div id="v-home">
+  <header class="hero">
+    <h1>Красивые ногти — без&nbsp;спешки и&nbsp;стресса</h1>
+    <p>Маникюр, педикюр и дизайн в уютной студии Rose Nails. Стерильные инструменты, качественные материалы, запись за минуту.</p>
+    <a class="btn" href="#booking">Записаться</a>
+  </header>
+
+  <section id="services">
+    <h2>Услуги и цены</h2>
+    <div class="grid">
+      <div class="card"><h3>Классический маникюр</h3><p>Обработка и уход за кутикулой</p><div class="price">1 200 ₽</div></div>
+      <div class="card"><h3>Маникюр + гель-лак</h3><p>Покрытие, держится до 3 недель</p><div class="price">2 200 ₽</div></div>
+      <div class="card"><h3>Наращивание</h3><p>Любая длина и форма</p><div class="price">3 500 ₽</div></div>
+      <div class="card"><h3>Педикюр</h3><p>Комплексный уход за стопами</p><div class="price">2 800 ₽</div></div>
+      <div class="card"><h3>Дизайн</h3><p>Френч, стразы, художественная роспись</p><div class="price">от 100 ₽ / ноготь</div></div>
+    </div>
+  </section>
+
+  <section id="masters">
+    <h2>Наши мастера</h2>
+    <div class="masters" id="ml"></div>
+  </section>
+
+  <section id="works">
+    <h2>Примеры работ</h2>
+    <div class="tabs" id="tabs"></div>
+    <div class="works" id="wl"></div>
+  </section>
+
+  <section id="why">
+    <h2>Почему к нам возвращаются</h2>
+    <div class="grid">
+      <div class="card"><h3>Стерильность</h3><p>Крафт-пакеты и обработка инструментов при вас.</p></div>
+      <div class="card"><h3>Опытные мастера</h3><p>Стаж от 5 лет, постоянное обучение.</p></div>
+      <div class="card"><h3>Гарантия</h3><p>Если покрытие отслоилось за 7 дней, исправим бесплатно.</p></div>
+    </div>
+  </section>
+
+</div>
+<div id="v-booking" hidden>
+  <section id="booking">
+    <h2>Запись на приём</h2>
+    <form id="f">
+      <input name="name" placeholder="Ваше имя" required>
+      <input name="phone" type="tel" placeholder="Телефон" required>
+      <select name="service" id="svc"></select>
+      <select name="master" id="mst"></select>
+      <input name="date" type="date" id="dt" required>
+      <select name="time" id="tm"></select>
+      <div class="sum" id="sum"></div>
+      <button class="btn" type="submit">Отправить заявку</button>
+      <div id="ok">Спасибо! Мы скоро свяжемся с вами.</div>
+    </form>
+  </section>
+</div>
+
+  <footer>
+    Rose Nails · ул. Пушкина, 10 · ежедневно 10:00–21:00 · +7 (900) 000-00-00
+  </footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const services=[['Классический маникюр',1200],['Маникюр + гель-лак',2200],['Наращивание',3500],['Педикюр',2800],['Дизайн',1000]];
+const masters=[['Анна','💅','Гель-лак, наращивание'],['Мария','🌸','Дизайн и роспись'],['Елена','✨','Маникюр и педикюр']];
+const cats=[['Все',''],['Нюд','#c9a79a'],['Френч','#b98aa0'],['Яркие','#d9577a'],['Дизайн','#8a6fb5']];
+const works=[['Нюд','Нюд классика','#c9a79a'],['Нюд','Молочный нюд','#d8bfb2'],['Френч','Классический френч','#b98aa0'],['Френч','Цветной френч','#c47f9a'],['Яркие','Малиновый','#d9577a'],['Яркие','Красный глянец','#c0394f'],['Дизайн','Стразы','#8a6fb5'],['Дизайн','Роспись','#6f8ab5']];
+let sel='';
+function renderMasters(){
+  $('ml').innerHTML=masters.map(m=>`<div class="card m ${sel===m[0]?'sel':''}" data-n="${m[0]}"><div class="av">${m[1]}</div><h3>${m[0]}</h3><p>${m[2]}</p></div>`).join('');
+  document.querySelectorAll('.m').forEach(el=>el.onclick=()=>{sel=sel===el.dataset.n?'':el.dataset.n;$('mst').value=sel;renderMasters();upd();location.hash='booking'});
+}
+function renderWorks(c){
+  $('tabs').innerHTML=cats.map(t=>`<button type="button" class="tab ${t[0]===c?'on':''}" data-c="${t[0]}">${t[0]}</button>`).join('');
+  $('wl').innerHTML=works.filter(w=>c==='Все'||w[0]===c).map(w=>`<div class="w" style="background:${w[2]}">${w[1]}</div>`).join('');
+  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>renderWorks(b.dataset.c));
+}
+function upd(){
+  const s=services.find(x=>x[0]===$('svc').value);
+  $('sum').innerHTML=`Услуга: ${s[0]}<br>Мастер: ${$('mst').value||'любой'}<br>Стоимость: <b>${s[1].toLocaleString('ru-RU')} ₽</b>`;
+}
+$('svc').innerHTML=services.map(s=>`<option>${s[0]}</option>`).join('');
+$('mst').innerHTML='<option value="">Любой мастер</option>'+masters.map(m=>`<option>${m[0]}</option>`).join('');
+$('tm').innerHTML=['10:00','11:30','13:00','14:30','16:00','17:30','19:00'].map(t=>`<option>${t}</option>`).join('');
+const today=new Date().toISOString().slice(0,10);$('dt').min=today;$('dt').value=today;
+$('svc').onchange=upd;$('mst').onchange=()=>{sel=$('mst').value;renderMasters();upd()};
+renderMasters();renderWorks('Все');upd();
+$('f').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const form=e.target,d=Object.fromEntries(new FormData(form)),btn=form.querySelector('button');
+  btn.disabled=true;
+  try{
+    const r=await fetch('/api/book',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    if(!r.ok)throw new Error('send failed');
+    $('ok').textContent='Спасибо, '+d.name+'! Ждём вас '+d.date+' в '+d.time+'.';
+    form.reset();$('dt').value=today;sel='';renderMasters();upd();
+  }catch(err){
+    $('ok').textContent='Не удалось отправить заявку. Позвоните нам по телефону.';
+  }
+  $('ok').style.display='block';btn.disabled=false;
+});
+function route(){
+  const b=location.hash==='#booking';
+  $('v-home').hidden=b;$('v-booking').hidden=!b;
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('on',(a.getAttribute('href')==='#booking')===b));
+  window.scrollTo(0,0);
+}
+addEventListener('hashchange',route);
+route();
+</script>
+</body>
+</html>
